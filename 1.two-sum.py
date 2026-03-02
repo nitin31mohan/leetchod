@@ -7,6 +7,14 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        tgt_dct = {}    # {val: idx}
+
+        for idx, val in enumerate(nums):
+            if not (target - val) in tgt_dct:
+                tgt_dct[val] = idx
+            else:
+                return [tgt_dct[(target - val)], idx]
+            
+
         
 # @lc code=end
